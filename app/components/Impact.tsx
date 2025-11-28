@@ -59,8 +59,8 @@ export default function Impact() {
 function StatCard({ icon, title, subtitle }: { icon: any; title: string; subtitle: string }) {
   return (
     <div className="flex items-center gap-3 bg-gray-50 p-3 sm:p-4 rounded-lg">
-      <div className="w-12 h-12 bg-white rounded-md flex items-center justify-center shadow-sm flex-shrink-0">
-        <Image src={icon} alt="icon" width={24} height={24} />
+      <div className="flex items-center justify-center flex-shrink-0">
+        <Image src={icon} alt="icon" width={40} height={40} />
       </div>
       <div>
         <div className="text-lg md:text-xl font-semibold">{title}</div>
