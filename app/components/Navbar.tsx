@@ -28,9 +28,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6">
             <Link href="/" className={linkClass('/')}>Home</Link>
             <Link href="/about-us" className={linkClass('/about-us')}>About Us</Link>
-            <Link href="/subsidiaries" className={linkClass('/subsidiaries')}>Subsidiaries</Link>
+            <Link href="/portfolio" className={linkClass('/portfolio')}>Portfolio</Link>
             <Link href="/investor-relations" className={linkClass('/investor-relations')}>Investor Relations</Link>
-            <Link href="/esg" className={linkClass('/esg')}>ESG</Link>
+            <Link href="/governance" className={linkClass('/governance')}>Governance</Link>
           </div>
           <div className="flex items-center gap-3">
             {/* desktop contact button */}
@@ -78,9 +78,9 @@ export default function Navbar() {
               <nav className="flex flex-col gap-4">
                 <Link href="/" onClick={() => setOpen(false)} className={linkClass('/') + ' text-lg'}>Home</Link>
                 <Link href="/about-us" onClick={() => setOpen(false)} className={linkClass('/about-us') + ' text-lg'}>About Us</Link>
-                <Link href="/subsidiaries" onClick={() => setOpen(false)} className={linkClass('/subsidiaries') + ' text-lg'}>Subsidiaries</Link>
+                <Link href="/portfolio" onClick={() => setOpen(false)} className={linkClass('/portfolio') + ' text-lg'}>Portfolio</Link>
                 <Link href="/investor-relations" onClick={() => setOpen(false)} className={linkClass('/investor-relations') + ' text-lg'}>Investor Relations</Link>
-                <Link href="/esg" onClick={() => setOpen(false)} className={linkClass('/esg') + ' text-lg'}>ESG</Link>
+                <Link href="/governance" onClick={() => setOpen(false)} className={linkClass('/governance') + ' text-lg'}>Governance</Link>
 
                 <Link href="/contact" onClick={() => setOpen(false)} className="mt-4 inline-flex items-center gap-3 bg-purple-500 text-white px-4 py-2 rounded-full w-max">
                   <span>Contact Us</span>

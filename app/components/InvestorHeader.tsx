@@ -4,7 +4,7 @@ import contentImg from "../../assets/investor-rel/Content.png";
 export default function InvestorHeader() {
   return (
     <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 pt-15">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-3xl md:text-4xl font-semibold mb-4">Investor Relations</h1>

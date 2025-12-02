@@ -26,7 +26,7 @@ function CheckIcon() {
   );
 }
 
-export default function SubsidiariesPage() {
+export default function PortfolioPage() {
   return (
     <main className="py-16  pt-30 bg-white">
       <div className="container mx-auto px-4">
