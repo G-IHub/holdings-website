@@ -8,13 +8,13 @@ export default function AboutHero() {
         <div className="flex max-md:flex-col max-md:flex-reverse justify-between items-center gap-10">
           <div className="min-w-[50vw]">
             <h2 className="text-4xl md:text-4xl font-semibold mb-4">Who we are</h2>
-            <p className="text-gray-700 mb-6 text-xl leading-relaxed">
+            <p className="text-gray-700 mb-6 max-md:text-base text-xl leading-relaxed">
               Genomac Holdings is headquartered in Ogbomoso, <br/>Nigeria, with expansion to Lagos and planned operations<br/>
               in Morocco. We orchestrate subsidiaries and flagship <br/>initiatives in genomics, biotechnology, healthcare, and<br/>
               innovation, ensuring resilience, well-being, and <br/>sustainable impact.
             </p>
 
-            <p className="text-gray-700 mb-6 text-xl leading-relaxed">
+            <p className="text-gray-700 mb-6 max-md:text-base text-xl leading-relaxed">
               We create long-term value by managing subsidiaries, <br/>building strategic partnerships, and commercializing<br/>
               solutions that improve lives across Africa and beyond.
             </p>

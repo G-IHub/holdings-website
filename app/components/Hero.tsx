@@ -21,12 +21,11 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex justify-center max-md:flex-col max-md:items-center gap-4">
-            <button className="bg-purple-600 text-white px-6 py-2 rounded-full inline-flex items-center gap-3 shadow-md hover:bg-purple-700 transition">
+            <button className="bg-purple-600 text-white px-6 py-2 rounded-full inline-flex items-center gap-3 shadow-md hover:bg-purple-700 transition max-md:w-full justify-center">
               <span>Explore Our Portfolio</span>
               <Image src={arrowIcon} alt="arrow" width={35} height={35} />
             </button>
-
-            <button className="border border-purple-300 text-purple-600 px-6 py-2 rounded-full inline-flex items-center gap-2 hover:bg-white/60 transition">
+            <button className="border border-purple-300 text-purple-600 px-6 py-2 rounded-full inline-flex items-center gap-2 hover:bg-white/60 transition max-md:w-full justify-center">
               <span>Contact Us</span>
               <Image src={arrowIcon} alt="arrow" width={35} height={35} />
             </button>

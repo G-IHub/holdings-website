@@ -56,9 +56,9 @@ export default function Footer() {
         <div className="border-t border-white/5 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
           <div>© {new Date().getFullYear()} Genomac Holdings. All rights reserved.</div>
           <div className="mt-4 md:mt-0 space-x-4">
-            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white">Terms of Service</Link>
-            <Link href="/cookies" className="hover:text-white">Cookie Policy</Link>
+            <Link href="/" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/" className="hover:text-white">Terms of Service</Link>
+            <Link href="/" className="hover:text-white">Cookie Policy</Link>
           </div>
         </div>
       </div>

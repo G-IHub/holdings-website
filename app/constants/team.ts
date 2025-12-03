@@ -27,7 +27,7 @@ export const team: TeamMember[] = [
   {
     id: 4,
     name: "G-Nature Directorate",
-    role: "Director of G-Nature Operational Excellence",
+    role: "Director of G-Nature",
     image: "../../assets/team/gnature.png"
   },
   {
@@ -63,7 +63,7 @@ export const team: TeamMember[] = [
   {
     id: 10,
     name: "Jesu-Damilare David",
-    role: "Advisor Genomach Holdings",
+    role: "Advisor Genomac Holdings",
     image: "../../assets/team/JD.png"
   }
 ]

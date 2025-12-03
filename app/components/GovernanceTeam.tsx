@@ -20,7 +20,7 @@ export default function GovernanceTeam() {
     <section className="py-12">
       <div className="max-w-7xl mx-auto pt-25 px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold">Leadership Structure</h2>
+          <h2 className="text-4xl max-md:text-3xl font-semibold">Leadership Structure</h2>
           <p className="max-w-2xl mx-auto text-gray-600 mt-2">Our leadership team brings together expertise from genomics, biotechnology, business, and innovation to drive strategic growth.</p>
         </div>
 
@@ -38,13 +38,13 @@ export default function GovernanceTeam() {
                   }}
                 >
                   <div className="w-44 h-44 md:w-48 md:h-48 rounded-xl overflow-hidden">
-                    <Image src={img} alt={member.name} width={600} height={600} className="object-cover w-full h-full" />
+                    <Image src={img} alt={member.name} className="object-contain w-full h-full" />
                   </div>
                 </div>
 
                 <div className="mt-3">
-                  <div className="text-base md:text-lg font-semibold">{member.role}</div>
-                  <div className="text-sm md:text-base text-gray-500 mt-1">{member.name}</div>
+                  <div className="text-base font-semibold">{member.role}</div>
+                  <div className="text-sm text-gray-500 mt-1">{member.name}</div>
                 </div>
               </div>
             );

@@ -15,7 +15,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     tagline: "Education & Research Excellence",
     description:
       "Leading biotechnology research and bioinformatics education platform serving over 100,000 scientists across 100+ countries.",
-    website_link: "#",
+    website_link: "https://genomachub.com",
     image_path: "../../assets/subsidiaries/genomac-institute.png",
     icon_path: "../../assets/icons/brain.svg",
     features: [
@@ -32,7 +32,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     tagline: "Incubation & Venture Building",
     description:
       "Africa’s premier biotechnology and health tech incubator, accelerating startups from ideation to market.",
-    website_link: "#",
+    website_link: "https://genomac.io",
     image_path: "../../assets/subsidiaries/g-ihub.png",
     icon_path: "../../assets/icons/light-bulb.svg",
     features: [
@@ -49,7 +49,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     tagline: "Herbal Therapeutics & Nutrigenomics",
     description:
       "Translational plant genomics and evidence-based herbal products for sustainable health and wellness.",
-    website_link: "#",
+    website_link: "https://gnatures.com",
     image_path: "../../assets/subsidiaries/g-natures.png",
     icon_path: "../../assets/icons/leaf.svg",
     features: [
@@ -66,7 +66,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     tagline: "Education & Research Excellence",
     description:
       "Corporate consulting and personalized healthcare solutions for laboratories, universities, NGOs and individuals.",
-    website_link: "#",
+    website_link: "https://genomac.services",
     image_path: "../../assets/subsidiaries/GSC.png",
     icon_path: "../../assets/icons/people2.svg",
     features: [
@@ -83,7 +83,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
     tagline: "Precision Medicine & Genomic Diagnostics",
     description:
       "Advanced diagnostic service using PCR technology with plans to expand into next-generation sequencing.",
-    website_link: "#",
+    website_link: "https://genomaclabs.com",
     image_path: "../../assets/subsidiaries/genomac-labs.png",
     icon_path: "../../assets/icons/tube.svg",
     features: [
