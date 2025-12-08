@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   },
   description:
     "Genomac Holdings invests, governs, and scales a diversified portfolio across genomics,biotechnology, healthcare, and entrepreneurship.",
-  themeColor: "#ffffff",
   robots: {
     index: true,
     follow: true,
