@@ -30,13 +30,13 @@ export default function Impact() {
                 subtitle="Countries Impacted"
               />
 
+              <StatCard icon={downloadIcon} title="300,000+" subtitle="Engagements" />
+
+              <StatCard icon={worldIcon} title="20,000+" subtitle="Jobs created indirectly" />
+
               <StatCard icon={downloadIcon} title="5" subtitle="Subsidiaries" />
 
-              <StatCard icon={worldIcon} title="5" subtitle="Continents Reached" />
-
-              <StatCard icon={downloadIcon} title="5" subtitle="Subsidiaries" />
-
-              <StatCard icon={worldIcon} title="5" subtitle="Continents Reached" />
+              <StatCard icon={worldIcon} title="10+" subtitle="Flagship Initiatives" />
             </div>
           </div>
 

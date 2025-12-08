@@ -8,7 +8,7 @@ export type TeamMember = {
 export const team: TeamMember[] = [
   {
     id: 1,
-    name: "Oluwaseyi Olawale",
+    name: "Olawale Oluwaseyi",
     role: "Founder & CEO",
     image: "../../assets/team/olawale.png"
   },
@@ -26,7 +26,7 @@ export const team: TeamMember[] = [
   },
   {
     id: 4,
-    name: "G-Nature Directorate",
+    name: "Oluwaseyi Praise",
     role: "Director of G-Nature",
     image: "../../assets/team/gnature.png"
   },
@@ -44,25 +44,25 @@ export const team: TeamMember[] = [
   },
   {
     id: 7,
+    name: "Adegbola Gloria",
+    role: "Operation Manager",
+    image: "../../assets/team/MissB.png"
+  },
+  {
+    id: 8,
     name: "Adekunle Victor",
     role: "Lead Marketer",
     image: "../../assets/team/victor.png"
   },
   {
-    id: 8,
+    id: 9,
     name: "Boluwatife Yetunde",
-    role: "Accountant",
+    role: "Chief Accounting Officer",
     image: "../../assets/team/yetunde.png"
   },
   {
-    id: 9,
-    name: "Afolabi Blessing",
-    role: "Project Lead",
-    image: "../../assets/team/MissB.png"
-  },
-  {
     id: 10,
-    name: "Jesu-Damilare David",
+    name: "Jesudamilare Adesegun David",
     role: "Advisor Genomac Holdings",
     image: "../../assets/team/JD.png"
   }

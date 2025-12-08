@@ -65,7 +65,7 @@ export default function OpenPositions() {
               </div>
 
               <div>
-                <a href="#" className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">Apply Now</a>
+                <a href="/contact" className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">Apply Now</a>
               </div>
             </div>
           ))}

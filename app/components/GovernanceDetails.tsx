@@ -1,12 +1,15 @@
 import Image from "next/image";
-import contentBg from "../../assets/investor-rel/Content.png";
+import socialImg from "../../assets/governance/social.png";
+import environmentalImg from "../../assets/governance/environmental.png";
+import governanceImg from "../../assets/governance/governance.png";
 
 const SECTIONS = [
   {
     key: "social",
     title: "Social",
     imageLeft: true,
-    imageAlt: "Social gradient",
+    image: socialImg,
+    imageAlt: "Community engagement",
     items: [
       { title: "Capacity Building", desc: "Training 100,000+ life scientists across 100+ countries." },
       { title: "Youth Empowerment", desc: "Internship programs, bootcamps, and career development initiatives." },
@@ -18,24 +21,26 @@ const SECTIONS = [
     key: "environmental",
     title: "Environmental",
     imageLeft: false,
-    imageAlt: "Environmental gradient",
+    image: environmentalImg,
+    imageAlt: "Environmental initiatives",
     items: [
-      { title: "Regulatory Compliance", desc: "NAFDAC, NHREC, and international regulatory adherence" },
-      { title: "Transparent Reporting", desc: "Regular financial and operational reporting to stakeholders" },
-      { title: "Board Oversight", desc: "Independent board members and structured governance" },
-      { title: "Risk Management", desc: "Comprehensive risk assessment and mitigation frameworks" },
+      { title: "Sustainable Sourcing", desc: "Ethical harvesting of herbal and natural product materials." },
+      { title: "Plant Genomics", desc: "Conservation and sustainable use of medicinal plant species." },
+      { title: "Green Laboratory", desc: "Eco-friendly laboratory practices and waste management." },
+      { title: "Carbon Footprint", desc: "Commitment to reducing environmental impact across operations." },
     ],
   },
   {
     key: "governance",
     title: "Governance",
     imageLeft: true,
-    imageAlt: "Governance gradient",
+    image: governanceImg,
+    imageAlt: "Governance meeting",
     items: [
-      { title: "Regulatory Compliance", desc: "NAFDAC, NHREC, and international regulatory adherence" },
-      { title: "Transparent Reporting", desc: "Regular financial and operational reporting to stakeholders" },
-      { title: "Board Oversight", desc: "Independent board members and structured governance" },
-      { title: "Risk Management", desc: "Comprehensive risk assessment and mitigation frameworks" },
+      { title: "Regulatory Compliance", desc: "NAFDAC, NHREC, and international regulatory adherence." },
+      { title: "Transparent Reporting", desc: "Regular financial and operational reporting to stakeholders." },
+      { title: "Board Oversight", desc: "Independent board members and structured governance." },
+      { title: "Risk Management", desc: "Comprehensive risk assessment and mitigation frameworks." },
     ],
   },
 ];
@@ -55,54 +60,59 @@ export default function GovernanceDetails() {
         {/* Heading is provided by the Policies section above; avoid duplicating the title/subtitle here. */}
 
         <div className="grid gap-y-10">
-          {SECTIONS.map((sec, si) => (
-            <div key={sec.key} className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              {sec.imageLeft ? (
-                <div className="order-1">
-                  <div
-                    className="w-full h-[28rem] rounded-xl overflow-hidden shadow-md"
-                    style={{
-                      backgroundImage: `url(${contentBg.src})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                    role="img"
-                    aria-label={sec.imageAlt}
-                  />
-                </div>
-              ) : null}
-
-              <div className="order-2 flex">
-                <div className="flex flex-col gap-6 justify-center">
-                  <div className="space-y-4">
-                    {sec.items.map((it, idx) => (
-                      <div key={idx} className="flex items-start gap-4">
-                        <NumberBadge n={idx + 1} />
-                        <div>
-                          <div className="text-base md:text-lg font-semibold">{it.title}</div>
-                          <div className="text-sm md:text-base text-gray-600">{it.desc}</div>
-                        </div>
-                      </div>
-                    ))}
+          {SECTIONS.map((sec) => (
+            <div key={sec.key} className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+              {/* Left column: title + either image (if imageLeft) or the items list (if imageRight) */}
+              <div className="flex flex-col items-center h-full justify-center">
+                {sec.imageLeft ? (
+                  <div className="w-full">
+                  <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                  <div className="relative w-full h-[28rem] rounded-xl overflow-hidden shadow-md">
+                    <Image src={sec.image} alt={sec.imageAlt} fill className="object-cover" />
                   </div>
-                  
-                </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center h-full justify-center gap-6">
+                    <div className="space-y-4">
+                      {sec.items.map((it, idx) => (
+                        <div key={idx} className="flex items-start gap-4">
+                          <NumberBadge n={idx + 1} />
+                          <div>
+                            <div className="text-base md:text-lg font-semibold">{it.title}</div>
+                            <div className="text-sm md:text-base text-gray-600">{it.desc}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {!sec.imageLeft ? (
-                <div className="order-1 lg:order-2">
-                  <div
-                    className="w-full h-[28rem] rounded-xl overflow-hidden shadow-md"
-                    style={{
-                      backgroundImage: `url(${contentBg.src})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                    role="img"
-                    aria-label={sec.imageAlt}
-                  />
-                </div>
-              ) : null}
+              {/* Right column: opposite of left - items if imageLeft, image if imageRight */}
+              <div className="flex flex-col items-center h-full justify-center"> 
+                {sec.imageLeft ? (
+                  <div className="flex flex-col items-center h-full justify-center gap-6">
+                    <div className="space-y-4">
+                      {sec.items.map((it, idx) => (
+                        <div key={idx} className="flex items-start gap-4">
+                          <NumberBadge n={idx + 1} />
+                          <div>
+                            <div className="text-base md:text-lg font-semibold">{it.title}</div>
+                            <div className="text-sm md:text-base text-gray-600">{it.desc}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-full">
+                  <h3 className="text-xl font-semibold mb-4">{sec.title}</h3>
+                  <div className="relative w-full h-[28rem] rounded-xl overflow-hidden shadow-md">
+                    <Image src={sec.image} alt={sec.imageAlt} fill className="object-cover" />
+                  </div>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

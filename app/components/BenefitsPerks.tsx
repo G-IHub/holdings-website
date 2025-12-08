@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import contentImg from "../../assets/investor-rel/Content.png";
+import contentImg from "../../assets/career/career.png";
 
 export default function BenefitsPerks() {
   const perks = [

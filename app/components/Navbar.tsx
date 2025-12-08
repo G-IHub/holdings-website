@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="fixed inset-x-0 top-4 z-50">
       <div className="container mx-auto px-4">
-        <div className="backdrop-blur-md bg-white/10 border border-white/10 rounded-full px-4 py-2 flex items-center justify-between shadow-lg">
+        <div className="backdrop-blur-md bg-white/70 border border-white/10 rounded-full px-4 py-2 flex items-center justify-between shadow-lg">
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-3">
                 <Image src={logo} alt="Genomac" width={100} height={40} className="object-cover" />

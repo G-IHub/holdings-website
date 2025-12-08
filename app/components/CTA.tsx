@@ -18,12 +18,12 @@ export default function CTA() {
           <div className="text-sm text-white/80">Trusted by 50k+ members</div>
         </div>
 
-        <button className="inline-flex items-center gap-3 bg-white text-purple-600 px-5 py-2 rounded-full shadow-md">
+        <a href="/contact" className="inline-flex items-center gap-3 bg-white text-purple-600 px-5 py-2 rounded-full shadow-md">
           <span>Contact Us</span>
           <span className="w-8 h-8 bg-purple-50 rounded-full flex items-center justify-center">
             <Image src={arrow} alt="arrow" width={35} height={35} />
           </span>
-        </button>
+        </a>
       </div>
     </section>
   );

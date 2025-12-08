@@ -13,7 +13,7 @@ import missb from "../../assets/team/MissB.png";
 import jd from "../../assets/team/JD.png";
 import contentBg from "../../assets/investor-rel/Content.png";
 
-const IMAGES = [olawale, oluwaseun, abraham, gnature, blessing, boluwatife, victor, yetunde, missb, jd];
+const IMAGES = [olawale, oluwaseun, abraham, gnature, blessing, boluwatife, missb, victor, yetunde, jd];
 
 export default function GovernanceTeam() {
   return (

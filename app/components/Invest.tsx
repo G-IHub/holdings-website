@@ -21,12 +21,12 @@ export default function Invest() {
               healthcare and innovation in Africa.
             </p>
 
-            <button className="inline-flex items-center gap-3 bg-white text-[#9b2fb6] py-3 px-6 rounded-full w-max">
+            <a href="/investor-relations" className="inline-flex items-center gap-3 bg-white text-[#9b2fb6] py-3 px-6 rounded-full w-max">
               <span>Investor Relation</span>
               <span className="w-6 h-6 relative">
                 <Image src={arrow} alt="arrow" fill className="object-contain" />
               </span>
-            </button>
+            </a>
           </div>
 
           <div className="lg:w-1/2 p-6 flex items-center">

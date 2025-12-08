@@ -1,5 +1,5 @@
 import Image from "next/image";
-import contentImg from "../../assets/investor-rel/Content.png";
+import contentImg from "../../assets/investor-rel/investment.png";
 
 export default function InvestorHeader() {
   return (
@@ -27,8 +27,8 @@ export default function InvestorHeader() {
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-end">
-            <div className="w-full md:w-96 h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+          <div className="flex justify-center max-md:justify-end">
+            <div className="w-full max-md:w-96 max-h-120 max-md:h-96 rounded-lg overflow-hidden">
               <Image src={contentImg} alt="Investor visual" width={1000} height={1000} className="object-cover w-full h-full" />
             </div>
           </div>
