@@ -6,7 +6,7 @@ import growthIcon from "../../assets/icons/growth-arrow.svg";
 export default function WhatWeDo() {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto max-w-6xl px-4 text-center">
         <h3 className="text-4xl max-lg:text-3xl font-semibold mb-3">What we do</h3>
         <p className="max-w-3xl text-xl mx-auto text-gray-600 mb-10">
           As a multidisciplinary innovation and development company, we create

@@ -5,7 +5,7 @@ import heartIcon from "../../assets/icons/heart.svg";
 export default function Governance() {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-semibold">Governance & ESG Commitment</h2>
           <p className="max-w-2xl mx-auto text-gray-600 text-sm mt-3">

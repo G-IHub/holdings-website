@@ -22,7 +22,7 @@ const IMAGE_MAP: Record<string, any> = {
 export default function Portfolio() {
   return (
     <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-semibold">Our Portfolio</h2>
           <p className="max-w-2xl mx-auto text-gray-600 mt-3">

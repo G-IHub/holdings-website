@@ -8,7 +8,7 @@ import worldIcon from "../../assets/icons/world.svg";
 export default function Impact() {
   return (
     <section className="py-12 bg-gray-100">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-6xl px-4">
         <div className="flex flex-col md:flex-row items-stretch gap-6">
           <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Our Global Impact</h2>

@@ -6,7 +6,7 @@ import arrow from "../../assets/icons/arrow.svg";
 export default function CTA() {
   return (
     <section className="py-12 bg-purple-600 text-white">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto max-w-6xl px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-semibold mb-4">Ready to Build the Future?</h2>
         <p className="max-w-3xl mx-auto text-sm md:text-base text-white/90 mb-6">
           Join us in advancing biotechnology, education, and healthcare solutions for Africa and the world through strategic collaboration
