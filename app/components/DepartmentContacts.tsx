@@ -5,7 +5,7 @@ export default function DepartmentContacts() {
   const contacts = [
     {
       title: "Investor Relations",
-      email: "investors@genomacholdings.com",
+      email: "genomachub@gmail.com",
       note: "For partnerships and investments",
     },
     {
@@ -27,7 +27,7 @@ export default function DepartmentContacts() {
 
   return (
     <section className="mt-12 py-10">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container max-w-6xl mx-auto text-center">
         <div className="mb-2 text-sm text-gray-500">Department-Specific Contacts</div>
         <h3 className="text-xl md:text-2xl font-semibold mb-6">Reach out to the right team for your specific needs</h3>
 

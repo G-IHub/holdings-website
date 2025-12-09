@@ -1,7 +1,7 @@
 import type { StaticImageData } from "next/image";
-import genomacLabsImg from "../../assets/investor-rel/genomac-labs.png";
+import genomacLabsImg from "../../assets/investor-rel/genomac-labs.jpg";
 import omicsboardImg from "../../assets/investor-rel/omicsboard.png";
-import gnaturesImg from "../../assets/investor-rel/gnatures.png";
+import gnaturesImg from "../../assets/investor-rel/gnatures.jpg";
 
 export interface InvestmentOpportunity {
   id: string;

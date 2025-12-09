@@ -30,7 +30,7 @@ const items = [
 
 export default function FlagshipInitiatives() {
   return (
-    <section className="mt-12">
+    <section className="my-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold">Flagship Initiative</h2>

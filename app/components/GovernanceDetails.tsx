@@ -56,9 +56,7 @@ function NumberBadge({ n }: { n: number }) {
 export default function GovernanceDetails() {
   return (
     <section className="py-12">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Heading is provided by the Policies section above; avoid duplicating the title/subtitle here. */}
-
+      <div className="max-w-6xl mx-auto">
         <div className="grid gap-y-10">
           {SECTIONS.map((sec) => (
             <div key={sec.key} className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">

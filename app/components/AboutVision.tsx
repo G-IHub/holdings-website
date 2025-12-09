@@ -5,7 +5,7 @@ import growthIcon from "../../assets/icons/growth-arrow.svg";
 export default function AboutVision() {
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-semibold">Our Vision and Mission</h2>
           <p className="max-w-2xl mx-auto text-gray-600 mt-3">
@@ -14,14 +14,14 @@ export default function AboutVision() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="rounded-lg max-w-2xl overflow-hidden shadow-md">
+          <div className="rounded-lg max-w-2xl overflow-hidden">
             <div className="flex flex-col items-start gap-6 p-6 bg-gradient-to-br from-purple-700 to-purple-600 text-white rounded-lg">
               <div className="flex items-center justify-center bg-white/20 rounded-full">
                 <Image src={shieldIcon} alt="vision icon"/>
               </div>
               <div>
                 <h3 className="font-semibold text-lg mb-2">Vision</h3>
-                <p className="text-md leading-relaxed">
+                <p className="text-md leading-relaxed mb-7">
                   To be Africa's foremost innovation powerhouse, establishing a transformative platform of landmark achievements in genomics,
                   biotechnology, and healthcare that sets the global standard for multidisciplinary excellence and impact.
                 </p>
@@ -29,7 +29,7 @@ export default function AboutVision() {
             </div>
           </div>
 
-          <div className="rounded-lg max-w-2xl overflow-hidden shadow-md">
+          <div className="rounded-lg max-w-2xl overflow-hidden">
             <div className="flex flex-col items-start gap-6 p-6 bg-gradient-to-br from-sky-500 to-sky-400 text-white rounded-lg">
               <div className="flex items-center justify-center bg-white/20 rounded-full">
                 <Image src={growthIcon} alt="mission icon"/>

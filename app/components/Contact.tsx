@@ -6,7 +6,7 @@ import peopleIcon from "../../assets/icons/people.svg";
 export default function Contact() {
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4 pt-20">
+      <div className="container max-w-6xl mx-auto pt-20">
         {/* Top contact cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center text-center">
@@ -23,7 +23,7 @@ export default function Contact() {
               <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a2 2 0 011.89 1.35l.7 2.1a2 2 0 01-.45 2.04L8.91 10.91a16 16 0 006.18 6.18l1.41-1.41a2 2 0 012.04-.45l2.1.7A2 2 0 0121 17.72V21a2 2 0 01-2 2A19 19 0 013 5z"></path></svg>
             </div>
             <h4 className="font-semibold text-sm mb-1">Phone</h4>
-            <div className="text-sm text-purple-600">+234-XXX-XXX-XXXX</div>
+            <div className="text-sm text-purple-600">+234 807 719 1794</div>
             <p className="text-xs text-gray-400 mt-2">Monday to Friday, 9am to 5pm WAT</p>
           </div>
 
@@ -32,7 +32,7 @@ export default function Contact() {
               <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12v6M8 6h8M6 12h.01M6 18h.01M6 6h.01"></path></svg>
             </div>
             <h4 className="font-semibold text-sm mb-1">Investor Relations</h4>
-            <div className="text-sm text-purple-600">investors@genomacholdings.com</div>
+            <div className="text-sm text-purple-600">genomachub@gmail.com</div>
             <p className="text-xs text-gray-400 mt-2">For partnership and investment inquiries</p>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function Contact() {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg">
-                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                  <div className="w-12 h-12 flex items-center justify-center">
                     <Image src={buildingIcon} alt="headquarters" width={36} height={36} />
                   </div>
                   <div>
@@ -103,8 +103,8 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg">
-                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                    <Image src={peopleIcon} alt="lagos branch" width={36} height={36} />
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <Image src={buildingIcon} alt="lagos branch" width={36} height={36} />
                   </div>
                   <div>
                     <div className="font-semibold">Lagos Branch</div>

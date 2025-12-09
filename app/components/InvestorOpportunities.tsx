@@ -6,7 +6,7 @@ import { investmentOpportunities } from "../constants/investmentOpportunities";
 export default function InvestorOpportunities() {
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-3xl font-bold mb-2">Investment Opportunities</h2>
           <p className="text-sm text-gray-600">Strategic investments driving large-scale impact of Africa's biotechnology ecosystem.</p>
@@ -19,12 +19,11 @@ export default function InvestorOpportunities() {
               <div key={opp.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${!isEven ? "lg:grid-flow-dense" : ""}`}>
                 {/* Image Container */}
                 <div className={isEven ? "order-1" : "order-2 lg:order-2"}>
-                  <div className="relative h-150 max-md:h-80 rounded-lg overflow-hidden shadow-lg">
+                  <div className="relative">
                     <Image
                       src={opp.image}
                       alt={opp.title}
-                      fill
-                      className="object-cover"
+                      className="rounded-md"
                     />
                   </div>
                 </div>

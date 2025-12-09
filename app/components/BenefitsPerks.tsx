@@ -13,7 +13,7 @@ export default function BenefitsPerks() {
 
   return (
     <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h3 className="text-2xl font-semibold mb-3">Benefits & Perks</h3>

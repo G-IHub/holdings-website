@@ -31,7 +31,7 @@ const CARDS = [
 export default function GovernanceInitiatives() {
   return (
     <section className="py-12">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold">Regulatory Compliance</h2>
           <p className="max-w-2xl mx-auto text-gray-600 mt-2">We maintain the highest standards of regulatory compliance across all operations.</p>

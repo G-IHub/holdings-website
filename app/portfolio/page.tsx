@@ -28,8 +28,8 @@ function CheckIcon() {
 
 export default function PortfolioPage() {
   return (
-    <main className="py-16  pt-30 bg-white">
-      <div className="container mx-auto px-4">
+    <main className="pt-30 bg-white">
+      <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-semibold">Our Subsidiaries</h1>
           <p className="max-w-3xl mx-auto text-gray-600 mt-3">A brief overview of our sister organisations and their focus areas.</p>

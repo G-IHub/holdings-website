@@ -36,7 +36,7 @@ const JOBS = [
 export default function OpenPositions() {
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold">Open Position</h2>
           <p className="mt-3 text-sm text-gray-600">Explore opportunities across our Holdings and subsidiary companies.</p>

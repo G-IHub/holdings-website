@@ -18,13 +18,13 @@ const IMAGES = [olawale, oluwaseun, abraham, gnature, blessing, boluwatife, miss
 export default function GovernanceTeam() {
   return (
     <section className="py-12">
-      <div className="max-w-7xl mx-auto pt-25 px-4">
+      <div className="max-w-6xl mx-auto pt-25">
         <div className="text-center mb-8">
           <h2 className="text-4xl max-md:text-3xl font-semibold">Leadership Structure</h2>
           <p className="max-w-2xl mx-auto text-gray-600 mt-2">Our leadership team brings together expertise from genomics, biotechnology, business, and innovation to drive strategic growth.</p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-2 gap-y-12">
           {TEAM.map((member, idx) => {
             const img = IMAGES[idx];
             return (

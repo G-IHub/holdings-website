@@ -21,7 +21,7 @@ export default function FAQ() {
 
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="text-left">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Frequently Asked Questions</h2>

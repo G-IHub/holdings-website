@@ -28,7 +28,7 @@ export default function AboutJourney() {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-semibold">Our Journey</h2>
           <p className="max-w-2xl mx-auto text-gray-600 mt-3">Key milestones in building Africa's biotechnology future</p>
