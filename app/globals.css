@@ -29,3 +29,54 @@ body {
   color: var(--black);
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
+
+/* Floating "View Tour Site" CTA */
+.float-tour-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #AD46FF;
+  color: var(--white);
+  padding: 0.8rem 0.9rem;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(34, 17, 50, 0.18);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.float-tour-btn svg {
+  display: inline-block;
+  vertical-align: middle;
+  color: currentColor;
+}
+
+.float-tour-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(34, 17, 50, 0.2);
+}
+
+.float-tour-btn:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.float-tour-btn:focus-visible {
+  outline: 3px solid rgba(178, 65, 183, 0.22);
+  outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .float-tour-btn {
+    right: 16px;
+    bottom: 16px;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
