@@ -6,7 +6,7 @@ import logo from "../../assets/home/logo.png";
 export default function Footer() {
   return (
     <footer className="bg-[#1a0716] text-gray-200">
-      <div className="container mx-auto max-w-6xl py-17">
+      <div className="container mx-auto max-w-6xl py-17 px-5">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">

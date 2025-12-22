@@ -10,9 +10,9 @@ export default function Hero() {
       </div>
 
       <div className="w-full">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h1 className="text-4xl max-md:text-3xl font-semibold leading-tight">
-            Building a Sustainable Future <br/>in Biotechnology,<br/> Healthcare and Technology
+        <div className="mx-auto max-w-6xl items-center justify-center flex-col flex px-6 text-center">
+          <h1 className="text-4xl max-md:text-3xl max-w-3xl font-semibold leading-tight">
+            Building a Sustainable Future in Biotechnology, Healthcare and Technology
           </h1>
 
           <p className="mt-6 text-md text-gray-500 max-w-3xl mx-auto">
