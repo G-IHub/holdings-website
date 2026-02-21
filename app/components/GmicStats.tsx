@@ -6,7 +6,7 @@ import img3 from "../../assets/gmic/bulb.svg";
 const Stats = () => {
   return (
     <div className="flex items-center justify-center p-4 md:py-16 md:px-20 bg-[#200822]">
-      <div className="grid grid-cols-1 md:grid-cols-3 items-center max-w-6xl gap-10 md:gap-50">
+      <div className="grid grid-cols-1 md:grid-cols-3 items-center max-w-6xl gap-10 md:gap-50 p-4">
         <div className="text-center text-white flex flex-col items-center gap-2">
           <div className="rounded-full flex justify-center items-center bg-[#FDF6FD] w-12 h-12">
             <Image src={img1} alt="" className="w-8" />
