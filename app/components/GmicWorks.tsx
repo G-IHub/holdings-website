@@ -3,7 +3,7 @@ import img from "../../assets/gmic/building.svg";
 
 const Works = () => {
   return (
-    <div className="flex items-center justify-center p-10 md:py-16 md:px-20">
+    <div className="flex items-center justify-center p-4 md:py-16 md:px-20">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-start max-w-6xl gap-4 md:gap-60">
         <div className="text-center">
           <div>

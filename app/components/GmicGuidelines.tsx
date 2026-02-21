@@ -8,7 +8,7 @@ import frame4 from "../../assets/gmic/Frame4.svg";
 
 const Guidelines = () => {
   return (
-    <div className="p-10 md:py-16 md:px-20 flex justify-center items-center">
+    <div className="p-4 md:py-16 md:px-20 flex justify-center items-center">
       <div className="max-w-6xl">
         <div className="text-center">
           <h2 className="bricolage font-bold text-[#021C3A] text-2xl md:text-5xl">

@@ -4,7 +4,7 @@ import ContactSVG from "../../assets/gmic/sportsman-fitness.jpg";
 const Contact = () => {
   return (
     <div
-      className="md:py-16 p-10 lg:px-20 flex min-h-screen w-full justify-center items-center relative">
+      className="md:py-16 p-4 lg:px-20 flex min-h-screen w-full justify-center items-center relative">
        <div className="absolute inset-0 -z-10 bg-black">
               <Image src={ContactSVG} alt="Hero background" fill className="object-cover" sizes="100vw" />
             </div>

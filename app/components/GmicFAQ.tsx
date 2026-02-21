@@ -8,7 +8,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 const FAQ = () => {
   return (
-    <div className="md:py-16 p-10 md:px-20">
+    <div className="md:py-16 p-4 md:px-20">
       <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         <div className="space-y-4">
           <h2 className="font-extrabold text-2xl md:text-4xl tracking-tight text-[#021C3A]">

@@ -5,7 +5,7 @@ import shield from "../../assets/gmic/shield.svg";
 
 const Feature = () => {
   return (
-    <div className="p-10 md:py-16 md:px-20 bg-[#FFFBFF]">
+    <div className="p-4 md:py-16 md:px-20 bg-[#FFFBFF]">
       <div className="max-w-6xl">
         <div className="text-center">
             <h2 className="inter font-medium text-2xl md:text-4xl tracking-tight text-[#021C3A]">GMIC Rewards & Opportunities</h2>
