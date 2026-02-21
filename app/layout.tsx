@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Inter, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -19,6 +19,16 @@ const poppins = Poppins({
     "800",
     "900",
   ],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -75,7 +85,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.variable} antialiased`}>
+      <body className={`${poppins.variable} ${inter.variable} ${bricolage.variable} antialiased`}>
         <Navbar />
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>

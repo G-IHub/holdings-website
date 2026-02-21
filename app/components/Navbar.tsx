@@ -31,6 +31,7 @@ export default function Navbar() {
             <Link href="/portfolio" className={linkClass('/portfolio')}>Portfolio</Link>
             <Link href="/investor-relations" className={linkClass('/investor-relations')}>Investor Relations</Link>
             <Link href="/governance" className={linkClass('/governance')}>Governance</Link>
+            <Link href="/gmic" className={linkClass('/gmic')}>GMIC</Link>
           </div>
           <div className="flex items-center gap-3">
             {/* desktop contact button */}
@@ -81,6 +82,7 @@ export default function Navbar() {
                 <Link href="/portfolio" onClick={() => setOpen(false)} className={linkClass('/portfolio') + ' text-lg'}>Portfolio</Link>
                 <Link href="/investor-relations" onClick={() => setOpen(false)} className={linkClass('/investor-relations') + ' text-lg'}>Investor Relations</Link>
                 <Link href="/governance" onClick={() => setOpen(false)} className={linkClass('/governance') + ' text-lg'}>Governance</Link>
+                <Link href="/gmic" onClick={() => setOpen(false)} className={linkClass('/gmic') + ' text-lg'}>GMIC</Link>
 
                 <Link href="/contact" onClick={() => setOpen(false)} className="mt-4 inline-flex items-center gap-3 bg-purple-500 text-white px-4 py-2 rounded-full w-max">
                   <span>Contact Us</span>

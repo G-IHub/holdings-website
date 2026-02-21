@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-inter: var(--font-inter);
+  --font-bricolage: var(--font-bricolage);
+}
+
 :root {
   /* Palette provided by user */
   --lilac: #B241B7; /* purple accent */
@@ -22,6 +27,8 @@
   --color-surface: var(--color-5);
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-bricolage: var(--font-bricolage);
 }
 
 body {
