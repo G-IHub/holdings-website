@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const Focus = () => {
   return (
-    <div className="flex items-center justify-center p-10 md:py-16 md:px-20">
+    <div className="flex items-center justify-center p-4 md:py-16 md:px-20">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center max-w-6xl gap-12">
         <div className="space-y-2 md:space-y-4">
             <h2 className="inter font-medium text-3xl md:text-4xl tracking-tight text-[#021C3A]">
