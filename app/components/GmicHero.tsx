@@ -6,7 +6,7 @@ import heroBg from "../../assets/home/hero-bg.png";
 
 const Hero = () => {
   return (
-    <div className="md:h-screen flex items-center md:justify-center relative border">
+    <div className="md:h-screen flex items-center md:justify-center relative">
       <div className="absolute inset-0 -z-10">
         <Image src={heroBg} alt="Hero background" fill className="object-cover" sizes="100vw" />
       </div>
