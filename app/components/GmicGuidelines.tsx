@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
-import frame from "../../assets/gmic/Frame.svg";
-import frame1 from "../../assets/gmic/Frame1.svg";
-import frame2 from "../../assets/gmic/Frame2.svg";
-import frame3 from "../../assets/gmic/Frame3.svg";
-import frame4 from "../../assets/gmic/Frame4.svg";
+import frame from "../../assets/gmic/frame.svg";
+import frame1 from "../../assets/gmic/frame1.svg";
+import frame2 from "../../assets/gmic/frame2.svg";
+import frame3 from "../../assets/gmic/frame3.svg";
+import frame4 from "../../assets/gmic/frame4.svg";
 
 const Guidelines = () => {
   return (
@@ -21,15 +21,28 @@ const Guidelines = () => {
         </div>
 
         {/* Frames */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-4 md:gap-10">
           {/* Step 1 */}
-          <div className="bg-[#FAFAFA] block md:flex items-center gap-14 mt-10 p-5 md:p-10 rounded-xl shadow-md">
+          <div className="bg-[#FAFAFA] block md:flex items-center justify-between gap-14 mt-10 p-5 md:py-10 md:px-16 rounded-xl shadow-md relative">
             <div className="grid grid-cols-1 gap-6">
               <h3 className="text-gray-900 font-medium text-2xl md:text-3xl tracking-tight">
                 Step 1: Reserve Your Slot
               </h3>
               <div className="space-y-3 text-gray-700 text-sm md:text-base">
                 <div className="flex items-center">
+                  <div><FaCheckCircle className="text-[#200822]" /></div>
+                  <span className="ml-2">
+                    Pay the registration fee: ₦2,000
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <div><FaCheckCircle className="text-[#200822]" /></div>
+                  <div className="ml-2">
+                    Your payment guarantees: Your entry slot in the competition, Eligibility for all rewards and recognition, Access to expert review of your submission, Certificate of Participation
+
+                  </div>
+                </div>
+                {/* <div className="flex items-center">
                   <div><FaCheckCircle className="text-[#200822]" /></div>
                   <span className="ml-2">
                     Your entry slot in the competition
@@ -44,12 +57,6 @@ const Guidelines = () => {
                 <div className="flex items-center">
                   <div><FaCheckCircle className="text-[#200822]" /></div>
                   <span className="ml-2">
-                    Your entry slot in the competition
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <div><FaCheckCircle className="text-[#200822]" /></div>
-                  <span className="ml-2">
                     Access to expert review of your submission
                   </span>
                 </div>
@@ -58,17 +65,23 @@ const Guidelines = () => {
                   <span className="ml-2">
                     Certificate of Participation
                   </span>
+                </div> */}
+                <div className="flex items-center">
+                  <div><FaCheckCircle className="text-[#200822]" /></div>
+                  <span className="ml-2">
+                    Registration Deadline: <b>March 27th, 2026</b>
+                  </span>
                 </div>
               </div>
               {/* <a href="" className="cursor-pointer space-x-1 text-[#003EB8]">
-                <span>Learn More</span> <span>&rarr;</span>
+                <span>Register Now</span> <span>&rarr;</span>
               </a> */}
             </div>
-            <Image src={frame} alt="" className="hidden md:block ml-30"/>
+              <Image src={frame} alt="" className="hidden md:block"/>
           </div>
 
           {/* Step 2 */}
-          <div className="bg-[#FAFAFA] block md:flex items-center justify-center gap-14 p-5 md:p-10 rounded-xl shadow-md">
+          <div className="bg-[#FAFAFA] block md:flex items-center justify-between gap-14 p-5 md:p-10 rounded-xl shadow-md">
             <div className="grid grid-cols-1 gap-6">
               <h3 className="text-gray-900 font-medium text-2xl md:text-3xl tracking-tight">
                 Step 2: Download Competition Guidelines
@@ -95,7 +108,7 @@ const Guidelines = () => {
           </div>
 
           {/* Step 3 */}
-          <div className="bg-[#FAFAFA] block md:flex items-center gap-14 p-5 md:p-10 rounded-xl shadow-md">
+          <div className="bg-[#FAFAFA] block md:flex items-center justify-between gap-14 p-5 md:py-10 md:px-16 rounded-xl shadow-md">
             <div className="grid grid-cols-1 gap-6">
               <h3 className="text-gray-900 font-medium text-2xl md:text-3xl tracking-tight">
                 Step 3: Write Your Review Article
@@ -122,7 +135,7 @@ const Guidelines = () => {
                 <div className="flex items-center">
                   <div><FaCheckCircle className="text-[#200822]" /></div>
                   <span className="ml-2">
-                    Word Format: PDF or Word document
+                    Format: PDF or Word document
                   </span>
                 </div>
               </div>
@@ -131,7 +144,7 @@ const Guidelines = () => {
           </div>
 
           {/* Step 4 */}
-          <div className="bg-[#FAFAFA] block md:flex items-center gap-14 p-5 md:p-10 rounded-xl shadow-md">
+          <div className="bg-[#FAFAFA] block md:flex items-center justify-between gap-14 p-5 md:py-10 md:px-16 rounded-xl shadow-md">
             <div className="grid grid-cols-1 gap-6">
               <h3 className="text-gray-900 font-medium text-2xl md:text-3xl tracking-tight">
                 Step 4: Submit Your Article
@@ -146,16 +159,22 @@ const Guidelines = () => {
                 <div className="flex items-center">
                   <div><FaCheckCircle className="text-[#200822]" /></div>
                   <span className="ml-2">
+                    Submission Deadline: <b>April 3rd, 2026</b>
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <div><FaCheckCircle className="text-[#200822]" /></div>
+                  <span className="ml-2">
                     Submissions will be evaluated by expert judges based on scientific rigor, methodology, and writing quality.
                   </span>
                 </div>
               </div>
             </div>
-            <Image src={frame4} alt="" className="hidden md:block"/>
+            <Image src={frame3} alt="" className="hidden md:block"/>
           </div>
 
           {/* Step 5 */}
-          <div className="bg-[#FAFAFA] block md:flex items-center gap-14 p-5 md:p-10 rounded-xl shadow-md">
+          <div className="bg-[#FAFAFA] block md:flex items-center justify-between gap-14 p-5 md:py-10 md:px-16 rounded-xl shadow-md">
             <div className="grid grid-cols-1 gap-6">
               <h3 className="text-gray-900 font-medium text-2xl md:text-3xl tracking-tight">
                 Step 5: Winners Selected & Announced
@@ -175,7 +194,7 @@ const Guidelines = () => {
                 </div>
               </div>
             </div>
-            <Image src={frame3} alt="" className="hidden md:block"/>
+            <Image src={frame4} alt="" className="hidden md:block"/>
           </div>
         </div>
       </div>

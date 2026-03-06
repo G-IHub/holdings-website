@@ -34,7 +34,7 @@ const FAQ = () => {
                   transition
                   className="origin-top transition duration-300 ease-out data-closed:-translate-y-2 data-closed:opacity-0 mt-2 text-sm/5 text-gray-500"
                 >
-                  Yes. Registration requires a ₦5,000 fee to reserve your slot.
+                  Yes. Registration requires a ₦2,000 fee to reserve your slot.
                 </DisclosurePanel>
               </div>
             </Disclosure>
@@ -82,7 +82,7 @@ const FAQ = () => {
                   transition
                   className="origin-top transition duration-300 ease-out data-closed:-translate-y-2 data-closed:opacity-0 mt-2 text-sm/5 text-gray-500"
                 >
-                  (Option A: if team is allowed) Yes. Team submissions are allowed, but one person must be designated as the lead author.(Option B: if not allowed) No. This competition is strictly for individual submissions.
+                  Submission as a team is not allowed as well as multiple submission is also not allowed and leads to automatic disqualification.
                 </DisclosurePanel>
               </div>
             </Disclosure>
@@ -98,7 +98,7 @@ const FAQ = () => {
                   transition
                   className="origin-top transition duration-300 ease-out data-closed:-translate-y-2 data-closed:opacity-0 mt-2 text-sm/5 text-gray-500"
                 >
-                  Participants may submit only one entry to ensure fairness in evaluation. (Adjust if you want multiple allowed.)
+                  Participants may submit only one entry to ensure fairness in evaluation.
                 </DisclosurePanel>
               </div>
             </Disclosure>
@@ -147,6 +147,22 @@ const FAQ = () => {
                   className="origin-top transition duration-300 ease-out data-closed:-translate-y-2 data-closed:opacity-0 mt-2 text-sm/5 text-gray-500"
                 >
                   Winners will be announced after the review period. The official date will be communicated via email and Genomac platforms.
+                </DisclosurePanel>
+              </div>
+            </Disclosure>
+            <Disclosure as="div" className="p-6">
+              <DisclosureButton className="group flex w-full items-center justify-between cursor-pointer">
+                <span className="text-sm/6 font-medium">
+                  When is the deadline for submission?
+                </span>
+                <MdKeyboardArrowDown className="size-5 group-data-open:rotate-180" />
+              </DisclosureButton>
+              <div className="overflow-hidden">
+                <DisclosurePanel
+                  transition
+                  className="origin-top transition duration-300 ease-out data-closed:-translate-y-2 data-closed:opacity-0 mt-2 text-sm/5 text-gray-500"
+                >
+                  April 3rd
                 </DisclosurePanel>
               </div>
             </Disclosure>

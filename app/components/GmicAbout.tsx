@@ -4,7 +4,7 @@ import about_img from "../../assets/gmic/about.svg";
 const About = () => {
   return (
     <div className="flex items-center justify-center p-4 md:py-16 md:px-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center max-w-6xl gap-10 md:gap-20">
+      <div className="flex flex-col-reverse md:flex-row justify-between items-center max-w-6xl gap-10 md:gap-20">
         <div className="">
           <Image src={about_img} alt="about-img" />
         </div>
