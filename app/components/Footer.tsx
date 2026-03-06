@@ -1,7 +1,7 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/home/logo.png";
+import CopyrightYear from "./CopyrightYear";
 
 export default function Footer() {
   return (
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/5 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
-          <div>© {new Date().getFullYear()} Genomac Holdings. All rights reserved.</div>
+          <div>© <CopyrightYear /> Genomac Holdings. All rights reserved.</div>
           <div className="mt-4 md:mt-0 space-x-4">
             <Link href="/" className="hover:text-white">Privacy Policy</Link>
             <Link href="/" className="hover:text-white">Terms of Service</Link>
