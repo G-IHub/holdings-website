@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
 import { HiOutlineTrash } from 'react-icons/hi';
 
 interface Participant {
@@ -51,11 +50,16 @@ export default function AdminPage() {
         method: 'DELETE',
       });
 
-      if (!response.ok) throw new Error('Failed to delete');
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Failed to delete: ${response.status}`);
+      }
+
       setParticipants(participants.filter((p) => p.id !== id));
-    } catch (err) {
-      alert('Failed to delete participant');
-      console.error(err);
+      alert('Participant deleted successfully');
+    } catch (err: any) {
+      console.error('Delete error:', err);
+      alert(`Failed to delete participant: ${err.message}`);
     }
   };
 
@@ -74,7 +78,7 @@ export default function AdminPage() {
       p.country,
       p.stateCity,
       p.organization,
-      new Date(p.registeredAt).toLocaleDateString(),
+      new Date(p.registeredAt).toISOString().split('T')[0], // Use consistent date format
     ]);
 
     const csv = [headers, ...rows].map((row) => row.map((cell) => `"${cell}"`).join(',')).join('\n');
@@ -110,7 +114,6 @@ export default function AdminPage() {
 
   return (
     <main>
-      <Navbar />
       <div className="min-h-screen bg-gray-50 py-12 px-4 md:px-20">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -159,7 +162,7 @@ export default function AdminPage() {
                 </select>
                 <button
                   onClick={handleExportCSV}
-                  className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-green-700 transition"
+                  className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
                 >
                   Export CSV
                 </button>
@@ -199,7 +202,7 @@ export default function AdminPage() {
                       <td className="px-6 py-4 text-sm text-gray-600">{participant.country || '-'}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">{participant.organization || '-'}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">
-                        {new Date(participant.registeredAt).toLocaleDateString()}
+                        {new Date(participant.registeredAt).toISOString().split('T')[0]}
                       </td>
                       <td className="px-6 py-4 text-center">
                         <button

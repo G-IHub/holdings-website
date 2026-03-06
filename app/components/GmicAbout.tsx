@@ -5,11 +5,11 @@ const About = () => {
   return (
     <div className="flex items-center justify-center p-4 md:py-16 md:px-20">
       <div className="flex flex-col-reverse md:flex-row justify-between items-center max-w-6xl gap-10 md:gap-20">
-        <div className="">
+        <div className="md:w-1/2">
           <Image src={about_img} alt="about-img" />
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 md:w-1/2">
           <h2 className="bricolage font-medium text-3xl md:text-4xl tracking-tight text-[#021C3A]">About GMIC</h2>
           <div className="text-sm md:text-base space-y-4 mt-2 md:mt-6 text-gray-700">
             <p>

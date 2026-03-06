@@ -85,7 +85,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.variable} ${inter.variable} ${bricolage.variable} antialiased`}>
+      <body className={`${poppins.variable} ${inter.variable} ${bricolage.variable} antialiased`} suppressHydrationWarning>
         <Navbar />
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>

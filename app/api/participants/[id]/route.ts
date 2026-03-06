@@ -2,9 +2,21 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+interface Participant {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  country: string;
+  stateCity: string;
+  organization: string;
+  registeredAt: string;
+}
+
 const DATA_FILE = path.join(process.cwd(), 'data', 'participants.json');
 
-function readParticipants(): any[] {
+function readParticipants(): Participant[] {
   try {
     if (fs.existsSync(DATA_FILE)) {
       const data = fs.readFileSync(DATA_FILE, 'utf-8');
@@ -16,7 +28,7 @@ function readParticipants(): any[] {
   return [];
 }
 
-function writeParticipants(data: any[]) {
+function writeParticipants(data: Participant[]): void {
   try {
     const dataDir = path.dirname(DATA_FILE);
     if (!fs.existsSync(dataDir)) {
@@ -31,10 +43,10 @@ function writeParticipants(data: any[]) {
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = params.id;
+    const { id } = await params;
 
     if (!id) {
       return NextResponse.json(
