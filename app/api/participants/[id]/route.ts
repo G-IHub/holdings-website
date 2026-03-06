@@ -47,10 +47,8 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
-    console.log('DELETE request for ID:', id);
 
     if (!id) {
-      console.log('No ID provided');
       return NextResponse.json(
         { error: 'Participant ID required' },
         { status: 400 }
@@ -58,14 +56,9 @@ export async function DELETE(
     }
 
     const participants = readParticipants();
-    console.log('Current participants count:', participants.length);
-    console.log('Participant IDs:', participants.map(p => p.id));
-
     const filtered = participants.filter((p) => p.id !== id);
-    console.log('Filtered participants count:', filtered.length);
 
     if (filtered.length === participants.length) {
-      console.log('Participant not found with ID:', id);
       return NextResponse.json(
         { error: 'Participant not found' },
         { status: 404 }
@@ -73,8 +66,6 @@ export async function DELETE(
     }
 
     writeParticipants(filtered);
-    console.log('Successfully deleted participant with ID:', id);
-
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error in DELETE:', error);
