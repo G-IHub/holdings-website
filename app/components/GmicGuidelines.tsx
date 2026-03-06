@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
-import frame from "../../assets/gmic/frame.svg";
-import frame1 from "../../assets/gmic/frame1.svg";
-import frame2 from "../../assets/gmic/frame2.svg";
-import frame3 from "../../assets/gmic/frame3.svg";
-import frame4 from "../../assets/gmic/frame4.svg";
+import frame from "../../assets/gmic/Frame.svg";
+import frame1 from "../../assets/gmic/Frame1.svg";
+import frame2 from "../../assets/gmic/Frame2.svg";
+import frame3 from "../../assets/gmic/Frame3.svg";
+import frame4 from "../../assets/gmic/Frame4.svg";
 
 const Guidelines = () => {
   return (
