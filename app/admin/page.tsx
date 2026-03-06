@@ -51,11 +51,16 @@ export default function AdminPage() {
         method: 'DELETE',
       });
 
-      if (!response.ok) throw new Error('Failed to delete');
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Failed to delete: ${response.status}`);
+      }
+
       setParticipants(participants.filter((p) => p.id !== id));
-    } catch (err) {
-      alert('Failed to delete participant');
-      console.error(err);
+      alert('Participant deleted successfully');
+    } catch (err: any) {
+      console.error('Delete error:', err);
+      alert(`Failed to delete participant: ${err.message}`);
     }
   };
 

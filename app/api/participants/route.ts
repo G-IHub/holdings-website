@@ -2,6 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+interface Participant {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  country: string;
+  stateCity: string;
+  organization: string;
+  registeredAt: string;
+}
+
 const DATA_FILE = path.join(process.cwd(), 'data', 'participants.json');
 
 // Ensure data directory exists
@@ -13,7 +25,7 @@ function ensureDataDirectory() {
 }
 
 // Read participants from file
-function readParticipants(): any[] {
+function readParticipants(): Participant[] {
   ensureDataDirectory();
   try {
     if (fs.existsSync(DATA_FILE)) {
@@ -27,7 +39,7 @@ function readParticipants(): any[] {
 }
 
 // Write participants to file
-function writeParticipants(data: any[]) {
+function writeParticipants(data: Participant[]): void {
   ensureDataDirectory();
   try {
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
@@ -86,7 +98,7 @@ export async function POST(request: NextRequest) {
 }
 
 // GET: Retrieve all participants
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const participants = readParticipants();
     return NextResponse.json(participants);
