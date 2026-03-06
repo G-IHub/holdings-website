@@ -4,7 +4,7 @@ import Hero from "../components/GmicHero";
 import About from "../components/GmicAbout";
 import Stats from "../components/GmicStats";
 import Focus from "../components/GmicFocus";
-import Feature from "../components/GmicFeature";
+import Feature from "../components/GmicRewards";
 import Works from "../components/GmicWorks";
 import Guidelines from "../components/GmicGuidelines";
 import FAQ from "../components/GmicFAQ";
@@ -22,7 +22,9 @@ export default function GMICPage() {
       <Works />
       <Guidelines />
       <FAQ />
-      <Contact />
+      <div id="register">
+        <Contact />
+      </div>
       {/* <Footer /> */}
     </main>
   );

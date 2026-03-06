@@ -4,6 +4,7 @@ import star from "../../assets/gmic/ai-magic.svg";
 // import herosvg from "../../assets/gmic/hero-bg.webp";
 import heroBg from "../../assets/home/hero-bg.png";
 
+
 const Hero = () => {
   return (
     <div className="md:h-screen flex items-center md:justify-center relative">
