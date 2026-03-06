@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import FloatTourButton from "./components/FloatTourButton";
 
 const poppins = Poppins({
-  variable: "--font-poppins",
+  // variable: "--font-poppins",
   subsets: ["latin"],
   weight: [
     "100",
@@ -22,12 +22,12 @@ const poppins = Poppins({
 });
 
 const inter = Inter({
-  variable: "--font-inter",
+  // variable: "--font-inter",
   subsets: ["latin"],
 });
 
 const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+  // variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
@@ -85,7 +85,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.variable} ${inter.variable} ${bricolage.variable} antialiased`}>
+      <body className={`antialiased`}
+      >
         <Navbar />
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>

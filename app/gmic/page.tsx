@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Hero from "../components/GmicHero";
 import About from "../components/GmicAbout";
 import Stats from "../components/GmicStats";
@@ -13,7 +11,6 @@ import Contact from "../components/GmicContact";
 export default function GMICPage() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <About />
       <Stats />
@@ -22,10 +19,7 @@ export default function GMICPage() {
       <Works />
       <Guidelines />
       <FAQ />
-      <div id="register">
-        <Contact />
-      </div>
-      {/* <Footer /> */}
+      <Contact />
     </main>
   );
 }
