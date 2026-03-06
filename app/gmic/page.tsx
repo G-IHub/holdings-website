@@ -22,7 +22,9 @@ export default function GMICPage() {
       <Works />
       <Guidelines />
       <FAQ />
-      <Contact />
+      <div id="register">
+        <Contact />
+      </div>
       {/* <Footer /> */}
     </main>
   );
