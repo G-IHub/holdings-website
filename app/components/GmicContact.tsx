@@ -241,7 +241,7 @@ const Contact = () => {
                 <option value="Clinician">Clinician</option>
                 <option value="Laboratory Scientist">Laboratory Scientist</option>
                 <option value="Public Health Professional">Public Health Professional</option>
-                <option value="Other">Otheradd</option>
+                <option value="Other">Otherg</option>
               </select>
             </div>
             <div>
