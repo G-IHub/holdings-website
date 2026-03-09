@@ -12,7 +12,7 @@ interface Participant {
   organization: string;
   currentStatus: string;
   payment: string;
-  registeredAt: string;
+  created_at?: string;
 }
 
 // POST: Add new participant

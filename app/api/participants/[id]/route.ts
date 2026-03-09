@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { supabase } from '../../../lib/supabase';
 
 interface Participant {
   id: string;
@@ -11,34 +10,9 @@ interface Participant {
   country: string;
   stateCity: string;
   organization: string;
-  registeredAt: string;
-}
-
-const DATA_FILE = path.join(process.cwd(), 'data', 'participants.json');
-
-function readParticipants(): Participant[] {
-  try {
-    if (fs.existsSync(DATA_FILE)) {
-      const data = fs.readFileSync(DATA_FILE, 'utf-8');
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error('Error reading participants:', error);
-  }
-  return [];
-}
-
-function writeParticipants(data: Participant[]): void {
-  try {
-    const dataDir = path.dirname(DATA_FILE);
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-  } catch (error) {
-    console.error('Error writing participants:', error);
-    throw error;
-  }
+  currentStatus: string;
+  payment: string;
+  created_at?: string;
 }
 
 export async function DELETE(
@@ -55,22 +29,24 @@ export async function DELETE(
       );
     }
 
-    const participants = readParticipants();
-    const filtered = participants.filter((p) => p.id !== id);
+    const { error } = await supabase
+      .from('participants')
+      .delete()
+      .eq('id', id);
 
-    if (filtered.length === participants.length) {
+    if (error) {
+      console.error('Supabase delete error:', error);
       return NextResponse.json(
-        { error: 'Participant not found' },
-        { status: 404 }
+        { error: 'Failed to delete participant', details: error.message },
+        { status: 500 }
       );
     }
 
-    writeParticipants(filtered);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error in DELETE:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: error.message },
       { status: 500 }
     );
   }

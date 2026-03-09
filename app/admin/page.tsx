@@ -14,6 +14,7 @@ interface Participant {
   organization: string;
   currentStatus: string;
   payment: string;
+  created_at?: string;
 }
 
 export default function AdminPage() {
@@ -115,7 +116,7 @@ export default function AdminPage() {
       } else if (sortBy === 'email') {
         return a.email.localeCompare(b.email);
       } else {
-        return new Date(b.registeredAt).getTime() - new Date(a.registeredAt).getTime();
+        return new Date(b.created_at || b.id).getTime() - new Date(a.created_at || a.id).getTime();
       }
     });
 
