@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -16,9 +16,11 @@ const Contact = () => {
     country: "",
     stateCity: "",
     organization: "",
+    currentStatus: "",
+    payment: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -56,27 +58,36 @@ const Contact = () => {
         country: "",
         stateCity: "",
         organization: "",
+        currentStatus: "",
+        payment: "",
       });
 
-      // Clear success message after 5 seconds
-      setTimeout(() => setSuccess(false), 5000);
+      // Redirect to WhatsApp after 3 seconds
+      setTimeout(() => {
+        window.location.href = 'https://chat.whatsapp.com/HZp6BRBzbr3DGER8K7EBm8?mode=gi_t';
+      }, 3000);
     } catch (err: any) {
       setError(err.message || "An error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
   };
-  return(
-    <div
-      className="md:py-16 p-4 lg:px-20 flex min-h-screen w-full justify-center items-center relative">
-        <div className="absolute inset-0 -z-10 bg-black hidden md:block">
-          <Image src={ContactSVG} alt="Hero background" fill className="object-cover" sizes="100vw" />
-        </div>
+  return (
+    <div className="md:py-16 p-4 lg:px-20 flex min-h-screen w-full justify-center items-center relative">
+      <div className="absolute inset-0 -z-10 bg-black hidden md:block">
+        <Image
+          src={ContactSVG}
+          alt="Hero background"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
       <div className="shadow-xl md:shadow-md max-w-3xl p-10 md:py-20 md:px-25 rounded-xl bg-white">
         {/* Success Message */}
         {success && (
           <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-            ✓ Thank you for registering! Your information has been received.
+            ✓ Registration successful! Redirecting to WhatsApp...
           </div>
         )}
 
@@ -161,6 +172,7 @@ const Contact = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                required
                 className="w-full border-b border-gray-300 outline-none py-2 placeholder:text-sm placeholder:text-gray-400 focus:border-purple-600"
                 placeholder="+234"
               />
@@ -182,6 +194,7 @@ const Contact = () => {
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
+                required
                 className="w-full border-b border-gray-300 outline-none py-2 placeholder:text-sm placeholder:text-gray-400 focus:border-purple-600"
                 placeholder="e.g Nigeria"
               />
@@ -206,7 +219,31 @@ const Contact = () => {
           </div>
 
           {/* Organization */}
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-end gap-6">
+            <div>
+              <label
+                htmlFor="currentStatus"
+                className="text-sm font-medium text-gray-900"
+              >
+                Current Status
+              </label>
+              <select
+                id="currentStatus"
+                name="currentStatus"
+                value={formData.currentStatus}
+                onChange={handleChange}
+                className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-600 w-full border-b border-gray-300 outline-none placeholder:text-sm placeholder:text-gray-400 focus:border-purple-600"
+              >
+                <option value="">Select Status</option>
+                <option value="Undergraduate Student">Undergraduate Student</option>
+                <option value="Graduate Student (MSc/PhD)">Graduate Student (MSc/PhD)</option>
+                <option value="Early-career Researcher">Early-career Researcher</option>
+                <option value="Clinician">Clinician</option>
+                <option value="Laboratory Scientist">Laboratory Scientist</option>
+                <option value="Public Health Professional">Public Health Professional</option>
+                <option value="Other">Other (Specify)</option>
+              </select>
+            </div>
             <div>
               <label
                 htmlFor="organization"
@@ -223,6 +260,39 @@ const Contact = () => {
                 className="w-full border-b border-gray-300 outline-none py-2 placeholder:text-sm placeholder:text-gray-400 focus:border-purple-600"
                 placeholder="e.g Your Organization"
               />
+            </div>
+          </div>
+
+          {/* Payment */}
+          <div className="grid grid-cols-1">
+            <label className="text-sm font-medium text-gray-900 mb-2">
+              Do you agree to make the Registration fee of N5000 ($5)?
+            </label>
+            <div className="flex gap-6">
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="yes"
+                  checked={formData.payment === "yes"}
+                  onChange={handleChange}
+                  required
+                  className="mr-2"
+                />
+                Yes
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="no"
+                  checked={formData.payment === "no"}
+                  onChange={handleChange}
+                  required
+                  className="mr-2"
+                />
+                No
+              </label>
             </div>
           </div>
 

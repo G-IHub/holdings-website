@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { supabase } from '../../../lib/supabase';
 
 interface Participant {
   id: string;
@@ -11,48 +10,16 @@ interface Participant {
   country: string;
   stateCity: string;
   organization: string;
-  registeredAt: string;
-}
-
-const DATA_FILE = path.join(process.cwd(), 'data', 'participants.json');
-
-// Ensure data directory exists
-function ensureDataDirectory() {
-  const dataDir = path.join(process.cwd(), 'data');
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-}
-
-// Read participants from file
-function readParticipants(): Participant[] {
-  ensureDataDirectory();
-  try {
-    if (fs.existsSync(DATA_FILE)) {
-      const data = fs.readFileSync(DATA_FILE, 'utf-8');
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error('Error reading participants:', error);
-  }
-  return [];
-}
-
-// Write participants to file
-function writeParticipants(data: Participant[]): void {
-  ensureDataDirectory();
-  try {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-  } catch (error) {
-    console.error('Error writing participants:', error);
-    throw error;
-  }
+  currentStatus: string;
+  payment: string;
+  created_at?: string;
 }
 
 // POST: Add new participant
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    console.log('Received body:', body);
 
     // Validate required fields
     if (!body.firstName || !body.lastName || !body.email) {
@@ -62,10 +29,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const participants = readParticipants();
-
     // Check for duplicate email
-    if (participants.some((p) => p.email === body.email)) {
+    const { data: existing, error: checkError } = await supabase
+      .from('participants')
+      .select('id')
+      .eq('email', body.email)
+      .single();
+
+    if (checkError && checkError.code !== 'PGRST116') { // PGRST116 is "not found" which is OK
+      console.error('Email check error:', checkError);
+      return NextResponse.json(
+        { error: 'Database error during email check' },
+        { status: 500 }
+      );
+    }
+
+    if (existing) {
       return NextResponse.json(
         { error: 'Email already registered' },
         { status: 409 }
@@ -73,25 +52,40 @@ export async function POST(request: NextRequest) {
     }
 
     const newParticipant = {
-      id: Date.now().toString(),
       firstName: body.firstName,
       lastName: body.lastName,
       email: body.email,
-      phone: body.phone,
-      country: body.country,
-      stateCity: body.stateCity,
-      organization: body.organization,
-      registeredAt: new Date().toISOString(),
+      phone: body.phone || null,
+      country: body.country || null,
+      stateCity: body.stateCity || null,
+      organization: body.organization || null,
+      currentStatus: body.currentStatus || null,
+      payment: body.payment || null,
     };
 
-    participants.push(newParticipant);
-    writeParticipants(participants);
+    console.log('Inserting participant:', newParticipant);
 
-    return NextResponse.json(newParticipant, { status: 201 });
+    const { data, error } = await supabase
+      .from('participants')
+      .insert([newParticipant])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Supabase insert error:', error);
+      return NextResponse.json(
+        { error: 'Failed to save participant', details: error.message },
+        { status: 500 }
+      );
+    }
+
+    console.log('Successfully inserted:', data);
+    return NextResponse.json(data, { status: 201 });
   } catch (error) {
-    console.error('Error in POST:', error);
+    console.error('Unexpected error in POST:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: errorMessage },
       { status: 500 }
     );
   }
@@ -100,12 +94,27 @@ export async function POST(request: NextRequest) {
 // GET: Retrieve all participants
 export async function GET() {
   try {
-    const participants = readParticipants();
-    return NextResponse.json(participants);
+    console.log('Fetching participants...');
+    const { data, error } = await supabase
+      .from('participants')
+      .select('*')
+      .order('id', { ascending: false });
+
+    if (error) {
+      console.error('Supabase GET error:', error);
+      return NextResponse.json(
+        { error: 'Failed to fetch participants', details: error.message },
+        { status: 500 }
+      );
+    }
+
+    console.log('Fetched participants:', data?.length || 0);
+    return NextResponse.json(data || []);
   } catch (error) {
-    console.error('Error in GET:', error);
+    console.error('Unexpected error in GET:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: errorMessage },
       { status: 500 }
     );
   }
@@ -124,17 +133,19 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const participants = readParticipants();
-    const filtered = participants.filter((p) => p.id !== id);
+    const { error } = await supabase
+      .from('participants')
+      .delete()
+      .eq('id', id);
 
-    if (filtered.length === participants.length) {
+    if (error) {
+      console.error('Supabase error:', error);
       return NextResponse.json(
-        { error: 'Participant not found' },
-        { status: 404 }
+        { error: 'Failed to delete participant' },
+        { status: 500 }
       );
     }
 
-    writeParticipants(filtered);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error in DELETE:', error);

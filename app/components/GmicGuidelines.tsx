@@ -100,7 +100,7 @@ const Guidelines = () => {
                   </span>
                 </div>
               </div>
-              <a href="https://docs.google.com/document/d/18MkjDhqVpcCNStkPgAdvzE85UGB2QFNLoVFRMhcEZ68/edit?tab=t.0"  target="_blank" className="cursor-pointer space-x-1 text-[#003EB8] text-sm md:text-base">
+              <a href="https://docs.google.com/document/d/1T2M4hJoQhFZxSIZAth-o5ceNuHSmRw8W_Meq0bh4L1A/edit?usp=sharing"  target="_blank" className="cursor-pointer space-x-1 text-[#003EB8] text-sm md:text-base">
                 <span>Download Now</span> <span>&rarr;</span>
               </a>
             </div>

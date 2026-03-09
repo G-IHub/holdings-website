@@ -12,7 +12,9 @@ interface Participant {
   country: string;
   stateCity: string;
   organization: string;
-  registeredAt: string;
+  currentStatus: string;
+  payment: string;
+  created_at?: string;
 }
 
 export default function AdminPage() {
@@ -30,12 +32,17 @@ export default function AdminPage() {
     try {
       setLoading(true);
       const response = await fetch('/api/participants');
-      if (!response.ok) throw new Error('Failed to fetch participants');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.details || errorData.error || 'Failed to fetch participants');
+      }
       const data = await response.json();
       setParticipants(data);
       setError('');
-    } catch (err) {
-      setError('Failed to load participants data');
+    } catch (err: any) {
+      const errorMsg = err.message || 'Failed to load participants data';
+      console.error('Fetch error:', errorMsg);
+      setError(errorMsg);
       console.error(err);
     } finally {
       setLoading(false);
@@ -69,7 +76,7 @@ export default function AdminPage() {
       return;
     }
 
-    const headers = ['First Name', 'Last Name', 'Email', 'Phone', 'Country', 'State/City', 'Organization', 'Registered At'];
+    const headers = ['First Name', 'Last Name', 'Email', 'Phone', 'Country', 'State/City', 'Organization', 'Current Status', 'Payment'];
     const rows = filteredParticipants.map((p) => [
       p.firstName,
       p.lastName,
@@ -78,7 +85,8 @@ export default function AdminPage() {
       p.country,
       p.stateCity,
       p.organization,
-      new Date(p.registeredAt).toISOString().split('T')[0], // Use consistent date format
+      p.currentStatus,
+      p.payment,
     ]);
 
     const csv = [headers, ...rows].map((row) => row.map((cell) => `"${cell}"`).join(',')).join('\n');
@@ -108,7 +116,7 @@ export default function AdminPage() {
       } else if (sortBy === 'email') {
         return a.email.localeCompare(b.email);
       } else {
-        return new Date(b.registeredAt).getTime() - new Date(a.registeredAt).getTime();
+        return new Date(b.created_at || b.id).getTime() - new Date(a.created_at || a.id).getTime();
       }
     });
 
@@ -162,7 +170,7 @@ export default function AdminPage() {
                 </select>
                 <button
                   onClick={handleExportCSV}
-                  className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+                  className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-green-700 transition"
                 >
                   Export CSV
                 </button>
@@ -187,7 +195,8 @@ export default function AdminPage() {
                     <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Phone</th>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Country</th>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Organization</th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Registered</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Current Status</th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Payment</th>
                     <th className="px-6 py-3 text-center text-sm font-semibold text-gray-900">Action</th>
                   </tr>
                 </thead>
@@ -201,9 +210,8 @@ export default function AdminPage() {
                       <td className="px-6 py-4 text-sm text-gray-600">{participant.phone || '-'}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">{participant.country || '-'}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">{participant.organization || '-'}</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        {new Date(participant.registeredAt).toISOString().split('T')[0]}
-                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-600">{participant.currentStatus || '-'}</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">{participant.payment || '-'}</td>
                       <td className="px-6 py-4 text-center">
                         <button
                           onClick={() => handleDelete(participant.id)}
