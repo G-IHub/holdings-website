@@ -73,7 +73,7 @@ const Contact = () => {
     }
   };
   return (
-    <div className="md:py-16 p-4 lg:px-20 flex min-h-screen w-full justify-center items-center relative">
+    <div id="contact" className="md:py-16 p-4 lg:px-20 flex min-h-screen w-full justify-center items-center relative">
       <div className="absolute inset-0 -z-10 bg-black hidden md:block">
         <Image
           src={ContactSVG}
@@ -241,7 +241,7 @@ const Contact = () => {
                 <option value="Clinician">Clinician</option>
                 <option value="Laboratory Scientist">Laboratory Scientist</option>
                 <option value="Public Health Professional">Public Health Professional</option>
-                <option value="Other">Otherg</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div>
@@ -266,7 +266,7 @@ const Contact = () => {
           {/* Payment */}
           <div className="grid grid-cols-1">
             <label className="text-sm font-medium text-gray-900 mb-2">
-              Do you agree to make the Registration fee of N5000 ($5)?
+              Do you agree to make the Registration fee of N2000?
             </label>
             <div className="flex gap-6">
               <label className="flex items-center">

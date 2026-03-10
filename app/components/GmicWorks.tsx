@@ -60,9 +60,9 @@ const Works = () => {
             <span className="text-purple-600 font-bold"> learn, contribute, and stand out.</span>
           </div>
 
-          <button className="rounded-full py-2 px-4 bg-purple-600 text-white mt-4 md:mt-6">
+          <a href="#contact" className="rounded-full py-2 px-4 bg-purple-600 text-white mt-4 md:mt-6 inline-flex items-center gap-2">
             <span>Get started</span> &rarr;
-          </button>
+          </a>
         </div>
       </div>
     </div>

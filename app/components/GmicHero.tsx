@@ -33,11 +33,13 @@ const Hero = () => {
               passionate about malaria research, genomics, and bioinformatics.
             </p>
           </div>
-          <button className="bg-purple-600 rounded-full mt-4 md:mt-6 px-3 py-1 md:px-6 md:py-2 flex items-center gap-2 mx-auto cursor-pointer">
-            <span className="text-white">Register Now</span>
+          <button className="bg-purple-600 rounded-full mt-4 md:mt-6 px-3 py-1 md:px-6 md:py-2 flex mx-auto cursor-pointer">
+           <a href="#contact" className="flex items-center gap-2 mx-auto">
+             <span className="text-white">Register Now</span>
             <span className="rounded-full p-1 md:p-2 bg-white flex items-center justify-center">
               <FaLocationArrow className="text-xs md:text-sm text-purple-600" />
             </span>
+           </a>
           </button>
         </div>
       </div>
