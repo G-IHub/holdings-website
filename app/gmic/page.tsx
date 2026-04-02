@@ -10,8 +10,8 @@ import Contact from "../components/GmicContact";
 
 export default function GMICPage() {
   return (
-    <main>
-      <Hero />
+    <main className="min-h-[calc(100vh-5rem)] flex items-center justify-center bg-[#f7f7fb]">
+         {/* <Hero />
       <About />
       <Stats />
       <Focus />
@@ -19,7 +19,13 @@ export default function GMICPage() {
       <Works />
       <Guidelines />
       <FAQ />
-      <Contact />
+      <Contact /> */}
+      <div className="text-center p-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#021C3A]">GMIC Registration Closed</h1>
+        <p className="mt-4 text-lg text-gray-600">
+          Thank you for your interest. Registration is now closed. Please visit again for future GMIC opportunities.
+        </p>
+      </div>
     </main>
   );
 }

@@ -25,7 +25,7 @@ export default function Footer() {
               <li><Link href="/portfolio" className="text-gray-300 hover:text-white">Portfolio</Link></li>
               <li><Link href="/governance" className="text-gray-300 hover:text-white">Governance & ESG</Link></li>
               <li><Link href="/investor-relations" className="text-gray-300 hover:text-white">Investor Relation</Link></li>
-              <li><Link href="/gmic" className="text-gray-300 hover:text-white">GMIC</Link></li>
+              {/* <li><Link href="/gmic" className="text-gray-300 hover:text-white">GMIC</Link></li> */}
               <li><Link href="/career" className="text-gray-300 hover:text-white">Careers</Link></li>
               <li><Link href="https://tour.genomacholdings.com" className="text-gray-300 hover:text-white">Tour</Link></li>
             </ul>
