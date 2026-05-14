@@ -29,6 +29,7 @@ export default function Navbar() {
             <Link href="/" className={linkClass('/')}>Home</Link>
             <Link href="/about-us" className={linkClass('/about-us')}>About Us</Link>
             <Link href="/portfolio" className={linkClass('/portfolio')}>Portfolio</Link>
+            <Link href="/research-winners" className={linkClass('/research-winners')}>Research Winners</Link>
             <Link href="/investor-relations" className={linkClass('/investor-relations')}>Investor Relations</Link>
             <Link href="/governance" className={linkClass('/governance')}>Governance</Link>
             {/* <Link href="/gmic" className={linkClass('/gmic')}>GMIC</Link> */}
@@ -80,6 +81,7 @@ export default function Navbar() {
                 <Link href="/" onClick={() => setOpen(false)} className={linkClass('/') + ' text-lg'}>Home</Link>
                 <Link href="/about-us" onClick={() => setOpen(false)} className={linkClass('/about-us') + ' text-lg'}>About Us</Link>
                 <Link href="/portfolio" onClick={() => setOpen(false)} className={linkClass('/portfolio') + ' text-lg'}>Portfolio</Link>
+                <Link href="/research-winners" onClick={() => setOpen(false)} className={linkClass('/research-winners') + ' text-lg'}>Research Winners</Link>
                 <Link href="/investor-relations" onClick={() => setOpen(false)} className={linkClass('/investor-relations') + ' text-lg'}>Investor Relations</Link>
                 <Link href="/governance" onClick={() => setOpen(false)} className={linkClass('/governance') + ' text-lg'}>Governance</Link>
                 {/* <Link href="/gmic" onClick={() => setOpen(false)} className={linkClass('/gmic') + ' text-lg'}>GMIC</Link> */}
